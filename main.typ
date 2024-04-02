@@ -1,5 +1,6 @@
 #import "pages/common.typ"
 #import "pages/cover.typ": cover
+#import "pages/license.typ": license
 
 // 默认字体：宋体、小四（12pt）
 #set text(lang: "zh", size: 12pt, font: common.font.serif)
@@ -32,12 +33,17 @@
     first-line-indent: 2em  // 首行缩进
 )
 
-// 段间距
-#show parbreak: br => v(1em)
-
 // - 原创性声明 & 版权使用授权书 - // 
 
+#set page(numbering: "I")
+#counter(page).update(1)
+
+#license
+
 #pagebreak()
+
+// 段间距
+#show parbreak: br => v(1em)
 
 // - 中文摘要 - //
 
