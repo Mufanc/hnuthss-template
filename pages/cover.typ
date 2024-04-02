@@ -1,11 +1,11 @@
-#import "common.typ"
+#import "../configs.typ": font
 
 #let basic_info(..info) = [
     #let info = info.named()
 
     #set align(center)
 
-    #show table.cell.where(x: 0): set text(font: common.font.sans, size: 14pt)
+    #show table.cell.where(x: 0): set text(font: font.sans, size: 14pt)
     #show table.cell.where(x: 1): set text(size: 15pt)
     #show table.cell.where(x: 0, y: 0): content => [
         #set text(size: 18pt, weight: 600)
@@ -13,12 +13,12 @@
         #content
     ]
     #show table.cell.where(x: 1, y: 0): content => [
-        #set par(leading: 1.5em, justify: true)
+        #set par(leading: 1.4em, justify: true)
         #content
     ]
 
     #table(
-        columns: (5cm, 7.5cm),
+        columns: (5.1cm, 7.5cm),
         rows: 1.07cm,
         // 自动换行的 dirty fix
         inset: (x, y) => if x == 1 and y == 0 { (x: 5pt, y: 12pt) } else { 5pt },

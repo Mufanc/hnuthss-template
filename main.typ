@@ -1,11 +1,12 @@
-#import "pages/common.typ"
-#import "pages/cover.typ": cover
-#import "pages/license.typ": license
+#import "configs.typ": font
+#import "components.typ": header, anchor, paragraph
 
 // 默认字体：宋体、小四（12pt）
-#set text(lang: "zh", size: 12pt, font: common.font.serif)
+#set text(lang: "zh", size: 12pt, font: font.serif)
 
 // - 封面 - // 
+
+#import "pages/cover.typ": cover
 
 #cover(
     project: "这是一个测试项目名字长长长长长长长长长长", 
@@ -24,7 +25,7 @@
 #set page(
     // 上边距：30mm；下边距：25mm；左边距：30mm；右边距：20mm
     margin: (top: 30mm, bottom: 25mm, left: 30mm, right: 20mm),
-    header: common.header
+    header: header
 )
 
 #set par(
@@ -38,22 +39,37 @@
 #set page(numbering: "I")
 #counter(page).update(1)
 
+#import "pages/license.typ": license
+
 #license
 
 #pagebreak()
 
-// 段间距
-#show parbreak: br => v(1em)
+// 标题居中
+#show heading.where(depth: 1): set align(center)
+
+// 标题字体
+#show heading.where(depth: 1): set text(size: 16pt, font: font.sans, weight: "regular")
 
 // - 中文摘要 - //
+
+#import "pages/abstract.typ"
+
+#abstract.zh
 
 #pagebreak()
 
 // - 英文摘要 - //
 
+#abstract.en
+
 #pagebreak()
 
 // - 目录 - //
+
+#import "pages/catalog.typ"
+
+#catalog.content
 
 #pagebreak()
 
@@ -67,6 +83,12 @@
 
 // - 正文 - //
 
+// 更新页码
+#set page(numbering: "1")
+#counter(page).update(1)
+
+#paragraph[
+
 在「原神」的世界里，我们被带入了一个神秘而古老的大陆 —— Teyvat（提瓦特）。This is a world full of magic and wonders, 每一个角落都蕴藏着无尽的探索与冒险。
 
 在这个充满魔法的世界中，我们与各种各样的角色相遇。There are adventurers from different nations, 有些 wield extraordinary elemental abilities。而其他人则隐藏在阴影中。Their stories intertwine across the continent, 每一个人都有自己的故事与使命。
@@ -78,3 +100,5 @@
 However, Teyvat is not only about adventure and battle. In this world, 我们也可以体验到生活的美好与平静。无论是在忙碌的城市还是宁静的乡村，每一个地方都散发着独特的魅力。与我们相伴的 companions 是这个世界的真正 treasures。
 
 在这个充满奇迹的世界中，every adventure in life is worth cherishing. Whether it's exploring the unknown or sharing laughter with friends, every moment is a precious memory. 让我们抛开烦恼，let our spirits soar, and immerse ourselves in this world full of wonders！
+
+]

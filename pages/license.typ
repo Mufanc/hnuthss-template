@@ -1,7 +1,8 @@
-#import "common.typ"
+#import "../configs.typ": font
+#import "../components.typ": anchor
 
 #let headline(content) = [
-    #set text(font: common.font.sans, size: 18pt)
+    #set text(font: font.sans, size: 18pt)
     #set align(center)
     #content
 ]
@@ -16,6 +17,8 @@
 
 #let license = [
     #show parbreak: br => v(0em)
+
+    #anchor[毕业论文（设计）原创性声明和毕业论文（设计）版权使用授权书]
 
     #v(1em)
 
@@ -48,7 +51,7 @@
             #set par(first-line-indent: 0em)
             #set align(left)
 
-            1、保#h(1em)密 #checkbox，在 #box(line()) 年解密后适用本授权书。
+            1、保#h(1em)密 #checkbox，在 #box(line(length: 3em, stroke: 0.1pt)) 年解密后适用本授权书。
 
             2、不保密 #checkbox。
 
