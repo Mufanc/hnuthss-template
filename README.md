@@ -6,26 +6,6 @@
 
 ---
 
-字体换成了 Google Fonts 的 Noto 系列，你需要手动下载 [Noto Sans SC](https://fonts.google.com/noto/specimen/Noto+Sans+SC) 和 [Noto Serif SC](https://fonts.google.com/noto/specimen/Noto+Serif+SC) 这两个字体到 `assets/fonts` 文件夹下
+中文字体换成了 Google Fonts 的 Noto 系列，请自行下载 [Noto Sans SC](https://fonts.google.com/noto/specimen/Noto+Sans+SC) 和 [Noto Serif SC](https://fonts.google.com/noto/specimen/Noto+Serif+SC) 这两个字体到 `assets/fonts` 文件夹下
 
-```
-assets/fonts
-├── NotoSansSC-Black.ttf
-├── NotoSansSC-Bold.ttf
-├── NotoSansSC-ExtraBold.ttf
-├── NotoSansSC-ExtraLight.ttf
-├── NotoSansSC-Light.ttf
-├── NotoSansSC-Medium.ttf
-├── NotoSansSC-Regular.ttf
-├── NotoSansSC-SemiBold.ttf
-├── NotoSansSC-Thin.ttf
-├── NotoSerifSC-Black.otf
-├── NotoSerifSC-Bold.otf
-├── NotoSerifSC-ExtraLight.otf
-├── NotoSerifSC-Light.otf
-├── NotoSerifSC-Medium.otf
-├── NotoSerifSC-Regular.otf
-└── NotoSerifSC-SemiBold.otf
-```
-
-对于非 Windows 用户，可能还需要下载 Times New Roman 字体
+你也可以从 [fonts 分支](https://github.com/Mufanc/bachelor-dissertation-template/tree/fonts) 中下载到我使用的字体（共约 175MB）
