@@ -4,8 +4,8 @@
 #let weight-calc(bold) = if bold { "bold" } else { "regular" }
 
 #let keyword(lang, words) = [
-    #let bold = lang == "en"
-    #set text(size: 14pt, font: font.sans, weight: weight-calc(bold))
+    #set text(size: 14pt, font: font.sans, weight: "bold")
+    #set par(first-line-indent: 0em)
     
     #let prefix = if lang == "zh" { "关键词：" } else { "Key Words: " }
     #let suffix = words.join(if lang == "zh" { "；" } else { "; " })
