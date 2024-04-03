@@ -22,7 +22,17 @@
     #align(center, text(size: 15pt, font: font.sans, weight: weight-calc(bold), content))
 ]
 
-#let zh = [
+#let abstract(content) = [
+    // 标题居中
+    #show heading.where(depth: 1): set align(center)
+
+    // 标题字体
+    #show heading.where(depth: 1): set text(size: 16pt, font: font.sans, weight: "regular")
+
+    #content
+]
+
+#let zh = abstract[
     #subtitle[一些约束体系量子哈密顿中算符次序问题]
 
     #v(2em)
@@ -50,7 +60,7 @@
     #keyword("zh", ("量子力学", "算符次序", "厄密算符", "正则量子化", "规范变换"))
 ]
 
-#let en = [
+#let en = abstract[
     #subtitle(bold: true)[The operator ordering problem in quantum Hamiltonian for some constraint systems]
 
     #v(2em)

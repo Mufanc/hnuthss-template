@@ -1,5 +1,5 @@
 #import "configs.typ": font
-#import "components.typ": header, anchor, paragraph
+#import "components.typ": header
 
 // 默认字体：宋体、小四（12pt）
 #set text(lang: "zh", size: 12pt, font: font.serif)
@@ -20,7 +20,7 @@
 
 #pagebreak()
 
-// 格式设置
+// - 原创性声明 & 版权使用授权书 - // 
 
 #set page(
     // 上边距：30mm；下边距：25mm；左边距：30mm；右边距：20mm
@@ -34,8 +34,6 @@
     first-line-indent: 2em  // 首行缩进
 )
 
-// - 原创性声明 & 版权使用授权书 - // 
-
 #set page(numbering: "I")
 #counter(page).update(1)
 
@@ -44,12 +42,6 @@
 #license
 
 #pagebreak()
-
-// 标题居中
-#show heading.where(depth: 1): set align(center)
-
-// 标题字体
-#show heading.where(depth: 1): set text(size: 16pt, font: font.sans, weight: "regular")
 
 // - 中文摘要 - //
 
@@ -87,18 +79,6 @@
 #set page(numbering: "1")
 #counter(page).update(1)
 
-#paragraph[
+#import "pages/substance.typ"
 
-在「原神」的世界里，我们被带入了一个神秘而古老的大陆 —— Teyvat（提瓦特）。This is a world full of magic and wonders, 每一个角落都蕴藏着无尽的探索与冒险。
-
-在这个充满魔法的世界中，我们与各种各样的角色相遇。There are adventurers from different nations, 有些 wield extraordinary elemental abilities。而其他人则隐藏在阴影中。Their stories intertwine across the continent, 每一个人都有自己的故事与使命。
-
-在 Teyvat 大陆上，people are closely connected to the power of elements. 风、火、水、雷等元素在大陆上流动，塑造着丰富多彩的自然景观。The seven Archons, or gods, of Teyvat are the guardians of the continent, each wielding control over a different elemental power, maintaining balance and order in the world.
-
-然而，在这个世界中，我们也可以感受到生活的美好与平静。From bustling cities to serene villages, 每一个地方都散发着独特的魅力。And our companions who accompany us are the true treasures of this world.
-
-However, Teyvat is not only about adventure and battle. In this world, 我们也可以体验到生活的美好与平静。无论是在忙碌的城市还是宁静的乡村，每一个地方都散发着独特的魅力。与我们相伴的 companions 是这个世界的真正 treasures。
-
-在这个充满奇迹的世界中，every adventure in life is worth cherishing. Whether it's exploring the unknown or sharing laughter with friends, every moment is a precious memory. 让我们抛开烦恼，let our spirits soar, and immerse ourselves in this world full of wonders！
-
-]
+#substance.main
