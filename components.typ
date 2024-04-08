@@ -20,8 +20,8 @@
     #v(-2 * line-height)
 ]
 
-#let paragraph(content, lp: 1em) = [
-    #show parbreak: br => if lp.em == 0 { br } else { v(lp) }
-    #fp
+#let paragraph(content, lp: 0.6em) = [
+    #show parbreak: br => br + v(lp)
+    #show heading: h => h + fp
     #content
 ]
