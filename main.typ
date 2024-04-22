@@ -91,6 +91,10 @@
 
 // - 参考文献 - //
 
+#import "pages/references.typ": references
+
+#references
+
 #pagebreak()
 
 // - 致谢 - //
