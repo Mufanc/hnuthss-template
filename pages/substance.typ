@@ -5,8 +5,10 @@
 
 #let number(..nums) = [
     #text(
-        size: 1.1em,     // 微微放大编号字体以适应 Word 中的视觉效果
-        weight: "bold",  // 给编号和标题设置不同字重（有点逆天）
+        // 略微放大编号字体以适应 Word 中的视觉效果
+        size: 1.05em,
+        // 一级标题编号需要加粗
+        weight: if nums.pos().len() == 1 { "bold" } else { "regular" } ,
         nums.pos().map(str).join(".") + " "
     )
 ]

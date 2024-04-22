@@ -10,6 +10,11 @@
 // 目录
 #let list-of-contents = [
     #title[目#h(3.5em)录]
+
+    // 目录中一级标题用小四号黑体，其余用小四号宋体
+    #set text(size: fontsize.L4s)
+    #show outline.entry.where(level: 1): set text(font: font.sans)
+
     #outline(title: [], indent: auto)
 ]
 
