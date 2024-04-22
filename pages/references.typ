@@ -1,5 +1,8 @@
 #import "../configs.typ": font, fontsize
 
+// Tips：你可以用这个工具将 BibTeX 格式的引用转换为 Hayagriva 格式
+// - https://jonasloos.github.io/bibtex-to-hayagriva-webapp
+
 #let references = [
     // 标题居中、标题字体
     #show heading.where(depth: 1): set align(center)
