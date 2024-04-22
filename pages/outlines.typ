@@ -16,7 +16,11 @@
 #let list-of-figures = [
     #anchor("插图索引")
     #title("插图索引")
-    #outline(title: [], target: figure.where(kind: i-figured._prefix + repr(image)))
+    #outline(
+        title: [], 
+        target: figure.where(kind: i-figured._prefix + repr(image))
+            .or(figure.where(kind: i-figured._prefix + repr(raw)))
+    )
 ]
 
 #let list-of-tables = [

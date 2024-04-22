@@ -22,6 +22,9 @@
     #show figure.where(kind: table): set figure.caption(position: top)
     #show figure.where(kind: table): set text(size: fontsize.L5, weight: "bold")
 
+    // 重设代码框内的行距
+    #show figure.where(kind: raw): set par(leading: 1em)
+
     // 三线表
     #show figure.where(kind: table): fig => [
         #show table: set table(stroke: (x, y) => if y == 0 { (bottom: 0.5pt) } else { none })
@@ -134,11 +137,25 @@
 
     伍
 
-    垫
+    在这个寂静的午后，阳光透过窗户洒在书桌上，一本书静静地躺在那里，等待着被翻阅。房间里弥漫着淡淡的咖啡香，仿佛时间在这一刻停滞了。窗外的风吹动着树叶，发出微弱的沙沙声，如同一首悠扬的小夜曲，轻柔地拂过耳畔。在这个宁静的时刻，心也变得安静下来，沉浸在这片宁静之中，享受着片刻的宁谧。
 
-    垫
-
-    垫
+    #figure(caption: "跳板函数")[
+        ```rust
+        unsafe extern "C" fn trampoline() {
+            asm!(
+                "push {ra}",    // 1. backup return address
+                "push 0",       // 2. keep stack aligned (*)
+                "call {hook}",  // 3. call hook callback 
+                "pop rax",      // 4. (*) skip
+                "pop rax",      // 5. restore return address
+                "jmp rax",      // 6. jump out!
+                hook = sym hook,
+                ra = in(reg) RETURN_ADDR,
+                options(nostack)
+            )
+        }
+        ```
+    ]
 
     我超，引用了好多！
     @mao2001
