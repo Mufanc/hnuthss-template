@@ -1,8 +1,8 @@
-#import "../configs.typ": font
+#import "../configs.typ": font, fontsize
 #import "../components.typ": anchor
 
 #let headline(content) = [
-    #set text(font: font.sans, size: 18pt)
+    #set text(font: font.sans, size: fontsize.L2s)
     #set align(center)
     #content
 ]

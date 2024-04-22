@@ -1,14 +1,14 @@
-#import "../configs.typ": font
+#import "../configs.typ": font, fontsize
 
 #let basic_info(..info) = [
     #let info = info.named()
 
     #set align(center)
 
-    #show table.cell.where(x: 0): set text(font: font.sans, size: 14pt)
-    #show table.cell.where(x: 1): set text(size: 15pt)
+    #show table.cell.where(x: 0): set text(font: font.sans, size: fontsize.L4)
+    #show table.cell.where(x: 1): set text(size: fontsize.L3s)
     #show table.cell.where(x: 0, y: 0): content => [
-        #set text(size: 18pt, weight: 600)
+        #set text(size: fontsize.L2s, weight: 600)
         #set par(justify: true)
         #content
     ]
@@ -54,7 +54,7 @@
         #basic_info(..info)
 
         #let date = info.named().date
-        #align(center + bottom, text(size: 14pt)[
+        #align(center + bottom, text(size: fontsize.L4)[
             #date.year() 年 #date.month() 月 #date.day() 日
         ])
     ]

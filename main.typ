@@ -1,8 +1,8 @@
-#import "configs.typ": font
+#import "configs.typ": font, fontsize
 #import "components.typ": header
 
-// 默认字体：宋体、小四（12pt）
-#set text(lang: "zh", size: 12pt, font: font.serif)
+// 默认字体：宋体、小四
+#set text(lang: "zh", size: fontsize.L4s, font: font.serif)
 
 // - 封面 - // 
 
@@ -59,17 +59,21 @@
 
 // - 目录 - //
 
-#import "pages/catalog.typ"
+#import "pages/outlines.typ"
 
-#catalog.content
+#outlines.list-of-contents
 
 #pagebreak()
 
 // - 插图索引 - //
 
+#outlines.list-of-figures
+
 #pagebreak()
 
 // - 附表索引 - //
+
+#outlines.list-of-tables
 
 #pagebreak()
 

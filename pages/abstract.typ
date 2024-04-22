@@ -1,10 +1,10 @@
-#import "../configs.typ": font
+#import "../configs.typ": font, fontsize
 #import "../components.typ": paragraph, fp
 
 #let weight-calc(bold) = if bold { "bold" } else { "regular" }
 
 #let keyword(lang, words) = [
-    #set text(size: 14pt, font: font.sans, weight: "bold")
+    #set text(size: fontsize.L4, font: font.sans, weight: "bold")
     #set par(first-line-indent: 0em)
     
     #let prefix = if lang == "zh" { "关键词：" } else { "Key Words: " }
@@ -18,8 +18,8 @@
     = #content
 ]
 
-#let subtitle(content, bold: false) = [
-    #align(center, text(size: 15pt, font: font.sans, weight: weight-calc(bold), content))
+#let titlesmall(content, bold: false) = [
+    #align(center, text(size: fontsize.L3s, font: font.sans, weight: weight-calc(bold), content))
 ]
 
 #let abstract(content) = [
@@ -27,13 +27,13 @@
     #show heading.where(depth: 1): set align(center)
 
     // 标题字体
-    #show heading.where(depth: 1): set text(size: 16pt, font: font.sans, weight: "regular")
+    #show heading.where(depth: 1): set text(size: fontsize.L3, font: font.sans, weight: "regular")
 
     #content
 ]
 
 #let zh = abstract[
-    #subtitle[一些约束体系量子哈密顿中算符次序问题]
+    #titlesmall[一些约束体系量子哈密顿中算符次序问题]
 
     #v(2em)
 
@@ -61,7 +61,7 @@
 ]
 
 #let en = abstract[
-    #subtitle(bold: true)[The operator ordering problem in quantum Hamiltonian for some constraint systems]
+    #titlesmall(bold: true)[The operator ordering problem in quantum Hamiltonian for some constraint systems]
 
     #v(2em)
 
