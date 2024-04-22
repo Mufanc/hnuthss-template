@@ -86,3 +86,15 @@
 #import "pages/substance.typ"
 
 #substance.main
+
+#pagebreak()
+
+// - 参考文献 - //
+
+#pagebreak()
+
+// - 致谢 - //
+
+#import "pages/acknowledgments.typ": acknowledgments
+
+#acknowledgments
