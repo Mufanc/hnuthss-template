@@ -22,6 +22,16 @@
     #show figure.where(kind: table): set figure.caption(position: top)
     #show figure.where(kind: table): set text(size: fontsize.L5, weight: "bold")
 
+    // 三线表
+    #show figure.where(kind: table): fig => [
+        #show table: set table(stroke: (x, y) => if y == 0 { (bottom: 0.5pt) } else { none })
+        #show table: tbl => [
+            #v(-0.8em)
+            #box(stroke: (top: 1pt, bottom: 1pt), tbl)
+        ]
+        #fig
+    ]
+
     // 标题字号
     #show heading: set text(size: fontsize.L4s)
     #show heading.where(depth: 1): set text(size: fontsize.L3)
@@ -45,8 +55,8 @@
     在 Teyvat 大陆上，people are closely connected to the power of elements. 风、火、水、雷等元素在大陆上流动，塑造着丰富多彩的自然景观。The seven Archons, or gods, of Teyvat are the guardians of the continent, each wielding control over a different elemental power, maintaining balance and order in the world.
 
     #figure(caption: "示例图表")[
-        #let A = table.cell(fill: green.lighten(60%))[A]
-        #let B = table.cell(fill: aqua.lighten(60%))[B]
+        // #let A = table.cell(fill: green.lighten(60%))[A]
+        // #let B = table.cell(fill: aqua.lighten(60%))[B]
 
         #show table.cell: set text(weight: "regular")
 
@@ -54,9 +64,9 @@
             columns: 4,
             [], [Exam 1], [Exam 2], [Exam 3],
 
-            [John], [], A, [],
-            [Mary], [], A, A,
-            [Robert], B, A, B,
+            [John], [--], [A], [--],
+            [Mary], [--], [A], [A],
+            [Robert], [B], [A], [B],
         )
     ]
 
