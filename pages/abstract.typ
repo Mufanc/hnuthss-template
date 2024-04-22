@@ -1,5 +1,5 @@
 #import "../configs.typ": font, fontsize
-#import "../components.typ": paragraph, fp
+#import "../components.typ": paragraph, fp, anchor
 
 #let weight-calc(bold) = if bold { "bold" } else { "regular" }
 
@@ -14,8 +14,7 @@
 ]
 
 #let title(content, bold: false) = [
-    #show heading: set text(weight: weight-calc(bold))
-    = #content
+    #align(center, text(size: fontsize.L3, font: font.sans, weight: weight-calc(bold), content))
 ]
 
 #let titlesmall(content, bold: false) = [
@@ -23,12 +22,6 @@
 ]
 
 #let abstract(content) = [
-    // 标题居中
-    #show heading.where(depth: 1): set align(center)
-
-    // 标题字体
-    #show heading.where(depth: 1): set text(size: fontsize.L3, font: font.sans, weight: "regular")
-
     #content
 ]
 
@@ -37,7 +30,8 @@
 
     #v(2em)
 
-    #title[摘 要]
+    #title[摘#h(2em)要]
+    #anchor[摘 要]
 
     #v(2em)
 
@@ -66,6 +60,7 @@
     #v(2em)
 
     #title(bold: true)[Abstract]
+    #anchor[Abstract]
 
     #v(2em)
 
