@@ -1,4 +1,4 @@
-.PHONY	: compile watch show-fonts
+.PHONY	: compile inotify checkout-fonts list-fonts
 
 TYPST	:= typst # docker run --rm -v "$(PWD):/paper" -w /paper ghcr.io/typst/typst:latest typst
 EXFLAGS	:= --font-path assets/fonts
