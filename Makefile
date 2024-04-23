@@ -10,7 +10,7 @@ inotify:
 	scripts/inotify.sh
 
 checkout-fonts:
-	git checkout fonts -- assets/fonts
+	git checkout origin/fonts -- assets/fonts
 	git rm --cached -r assets/fonts
 
 list-fonts:
