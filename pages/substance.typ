@@ -27,6 +27,12 @@
     // 重设代码框内的行距
     #show figure.where(kind: raw): set par(leading: 1em)
 
+    // 代码框样式
+    #show figure.where(kind: raw): fig => [
+        #show figure.caption: cap => pad(top: 0.5em, cap)
+        #fig
+    ]
+
     // 三线表
     #show figure.where(kind: table): fig => [
         #show table: set table(stroke: (x, y) => if y == 0 { (bottom: 0.5pt) } else { none })
