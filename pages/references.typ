@@ -1,4 +1,4 @@
-#import "../configs.typ": font, fontsize
+#import "/configs.typ": font, fontsize
 
 // Tips：你可以用这个工具将 BibTeX 格式的引用转换为 Hayagriva 格式
 // - https://jonasloos.github.io/bibtex-to-hayagriva-webapp
@@ -14,5 +14,5 @@
     // 内容字体
     #set text(size: fontsize.L5)
 
-    #bibliography("../references.yml", style: "gb-7714-2015-numeric")
+    #bibliography("/references.yml", style: "gb-7714-2015-numeric")
 ]

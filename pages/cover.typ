@@ -1,4 +1,4 @@
-#import "../configs.typ": font, fontsize
+#import "/configs.typ": font, fontsize
 
 #let basic_info(..info) = [
     #let info = info.named()
@@ -42,10 +42,10 @@
     #page(
         background: align(center + top)[
             #v(3cm)
-            #image("../assets/logos/logo-grayscale.svg", width: 12cm)
+            #image("/assets/logos/logo-grayscale.svg", width: 12cm)
         ]
     )[
-        #align(center, image("../assets/logos/logo-text-grayscale.svg", width: 7cm))
+        #align(center, image("/assets/logos/logo-text-grayscale.svg", width: 7cm))
 
         #v(1.5cm)
         #text(size: 45pt, " 本科生毕业论文(设计)")

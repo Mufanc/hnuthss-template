@@ -1,5 +1,5 @@
-#import "../configs.typ": font, fontsize
-#import "../components.typ": paragraph, fp, anchor
+#import "/configs.typ": font, fontsize
+#import "/components.typ": paragraph, fp, anchor
 
 #let weight-calc(bold) = if bold { "bold" } else { "regular" }
 

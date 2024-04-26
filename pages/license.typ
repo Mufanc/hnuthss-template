@@ -1,5 +1,5 @@
-#import "../configs.typ": font, fontsize
-#import "../components.typ": anchor
+#import "/configs.typ": font, fontsize
+#import "/components.typ": anchor
 
 #let headline(content) = [
     #set text(font: font.sans, size: fontsize.L2s)

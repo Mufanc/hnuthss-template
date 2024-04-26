@@ -1,5 +1,5 @@
-#import "../configs.typ": font, fontsize
-#import "../components.typ": anchor, paragraph, fp
+#import "/configs.typ": font, fontsize
+#import "/components.typ": anchor, paragraph, fp
 
 #let acknowledgments = [
     #align(center, text(size: fontsize.L3, font: font.sans)[致#h(2em)谢])

@@ -1,12 +1,12 @@
-#import "configs.typ": font, fontsize
-#import "components.typ": header
+#import "/configs.typ": font, fontsize
+#import "/components.typ": header
 
 // 默认字体：宋体、小四
 #set text(lang: "zh", size: fontsize.L4s, font: font.serif)
 
 // - 封面 - // 
 
-#import "pages/cover.typ": cover
+#import "/pages/cover.typ": cover
 
 #cover(
     project: "这是一个测试项目名字长长长长长长长长长长", 
@@ -37,7 +37,7 @@
 #set page(numbering: "I")
 #counter(page).update(1)
 
-#import "pages/license.typ": license
+#import "/pages/license.typ": license
 
 #license
 
@@ -45,7 +45,7 @@
 
 // - 中文摘要 - //
 
-#import "pages/abstract.typ"
+#import "/pages/abstract.typ"
 
 #abstract.zh
 
@@ -59,7 +59,7 @@
 
 // - 目录 - //
 
-#import "pages/outlines.typ"
+#import "/pages/outlines.typ"
 
 #outlines.list-of-contents
 
@@ -83,7 +83,7 @@
 #set page(numbering: "1")
 #counter(page).update(1)
 
-#import "pages/substance.typ"
+#import "/pages/substance.typ"
 
 #substance.main
 
@@ -91,7 +91,7 @@
 
 // - 参考文献 - //
 
-#import "pages/references.typ": references
+#import "/pages/references.typ": references
 
 #references
 
@@ -99,6 +99,6 @@
 
 // - 致谢 - //
 
-#import "pages/acknowledgments.typ": acknowledgments
+#import "/pages/acknowledgments.typ": acknowledgments
 
 #acknowledgments
