@@ -18,7 +18,11 @@
     #show figure: i-figured.show-figure
 
     // 图下五号宋体加粗
-    #show figure.where(kind: image): set text(size: fontsize.L5, weight: "bold")  
+    #show figure.where(kind: image): set text(size: fontsize.L5, weight: "bold")
+    #show figure.where(kind: image): fig => [
+        #show figure.caption: cap => pad(top: 0.5em, cap)
+        #fig
+    ]
 
     // 表上五号宋体加粗
     #show figure.where(kind: table): set figure.caption(position: top)
