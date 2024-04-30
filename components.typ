@@ -30,19 +30,21 @@
     #content
 ]
 
-#let hstack(nocount: false, ..args) = [
-    #if not(nocount) {
-        let cntr = counter("subfigure")
-        cntr.update(0)
-        show image: img => [
-            #stack(dir: ttb, spacing: 0.5em, img)[
-                #cntr.step()
-                #text(weight: "regular", cntr.display("(a)"))
-            ]
+#let hstack(captions: none, ..args) = {
+    let cntr = counter("subfigure")
+    cntr.update(0)
+    show image: img => {
+        stack(dir: ttb, spacing: 0.5em, img)[
+            #cntr.step()
+            #if captions != none {
+                context {
+                    text(weight: "regular")[
+                        #cntr.display("(a)") #captions.at(cntr.get().at(0) - 1)
+                    ]
+                }
+            }
         ]
-        stack(dir: ltr, spacing: 2em, ..args)
-        v(1em)
-    } else {
-        stack(dir: ltr, spacing: 2em, ..args)
     }
-]
+    stack(dir: ltr, spacing: 2em, ..args)
+}
+
