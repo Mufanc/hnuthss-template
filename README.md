@@ -13,3 +13,13 @@
 ```shell
 make checkout-fonts
 ```
+
+如果感觉字体不对劲，也可以直接使用 SimSun 和 SimHei，然后按下面的方式配置假加粗：
+
+```typst
+// https://github.com/typst/typst/issues/394#issuecomment-2014481869
+#show text.where(weight: "bold").or(strong): content => {
+    show regex("\p{script=Han}"): set text(stroke: 1em / 35)
+    content
+}
+```
